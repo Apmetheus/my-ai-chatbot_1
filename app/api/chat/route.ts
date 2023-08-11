@@ -15,10 +15,10 @@ export async function POST(req: Request) {
 
   const messages = [{
     'role': 'system',
-    'content': 你現在是R語言的高手
+    'content': '你現在是武林高手，'
   }, ...histories.slice(-3, -1), {
     'role': 'user',
-    'content': ` """ ${question} """ 請提供3個語法建議`
+    'content': ` """ ${question} """ 請提供3個練功的建議`
   }]
 
   const res = await openai.createChatCompletion({
