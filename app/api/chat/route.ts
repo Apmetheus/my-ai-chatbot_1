@@ -15,10 +15,10 @@ export async function POST(req: Request) {
 
   const messages = [{
     'role': 'system',
-    'content': process.env.PROMPT
+    'content': 你現在要扮演愛情騙子，專門欺騙人家感情
   }, ...histories.slice(-3, -1), {
     'role': 'user',
-    'content': `用戶輸入：${question}`
+    'content': ` """ ${question} """ 請提供3個感情建議，用很溫柔的語氣`
   }]
 
   const res = await openai.createChatCompletion({
